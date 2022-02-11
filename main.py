@@ -55,11 +55,18 @@ time_sheet_list =[
   },
 ]
 
-print(time_sheet_list)
+#print(time_sheet_list)
 
-for indexes in time_sheet_list:
-    for key in indexes:
-        print(key)
+#for entries in time_sheet_list:
+#    print (entries)
+    #for key in indexes:
+        #print(key)
 
-    #print(time_sheet_list[]['name'])
-    #print(time_sheet_list[0]["times"][0]) prints time in / time out from indexed position of 'times'
+#print(time_sheet_list[0]["times"][0]) #prints time in / time out from indexed position of 'times'
+
+def print_times():
+    print(time_sheet_list[0]["times"])
+
+print_times()
+
+clock_in()
