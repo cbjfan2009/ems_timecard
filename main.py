@@ -69,4 +69,40 @@ def print_times():
 
 print_times()
 
+
 clock_in()
+
+time_sheet_dict = {
+    'matt': {'date': ['02-15-2022', {'time_in': "02:20:20"}, {'time_out': '10:30:25'}]
+             },
+    'ken': {'date': ['02-15-2022', {'time_in': "02:20:20"}, {'time_out': '10:30:25'}]
+             }
+
+    }
+
+print("Time sheet dictionary " , time_sheet_dict, '\n', '\n')
+
+print("Matt's times: ", time_sheet_dict['matt'], '\n', '\n')
+
+print("Matt's times on " + time_sheet_dict['matt']['date'][0] + ": ", time_sheet_dict['matt']['date'])
+
+dates_worked = {'02-15-2022': [{'matt': ['time_in', 'time_out']},
+                               {'ken': ['time_in', 'time_out']},
+                               {'sherree': ['time_in', 'time_out']}],
+
+                '02-14-2022': [{'matt': ['time_in', 'time_out']},
+                               {'ken': ['time_in', 'time_out']},
+                               {'sherree': ['time_in', 'time_out']}],
+
+                '02-13-2022': [{'matt': ['time_in', 'time_out']},
+                               {'ken': ['time_in', 'time_out']},
+                               {'sherree': ['time_in', 'time_out']}]
+                }
+
+def print_name_time(name):
+    for i, v in enumerate(dates_worked):
+        if v == name:
+            print("This is from dates_worked: ", dates_worked['02-13-2022'][i])
+
+
+print_name_time('matt')
