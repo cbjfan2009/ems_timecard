@@ -67,10 +67,7 @@ time_sheet_list =[
 def print_times():
     print(time_sheet_list[0]["times"])
 
-print_times()
 
-
-clock_in()
 
 time_sheet_dict = {
     'matt': {'date': ['02-15-2022', {'time_in': "02:20:20"}, {'time_out': '10:30:25'}]
@@ -80,11 +77,11 @@ time_sheet_dict = {
 
     }
 
-print("Time sheet dictionary " , time_sheet_dict, '\n', '\n')
+#print("Time sheet dictionary " , time_sheet_dict, '\n', '\n')
 
-print("Matt's times: ", time_sheet_dict['matt'], '\n', '\n')
+#print("Matt's times: ", time_sheet_dict['matt'], '\n', '\n')
 
-print("Matt's times on " + time_sheet_dict['matt']['date'][0] + ": ", time_sheet_dict['matt']['date'])
+#print("Matt's times on " + time_sheet_dict['matt']['date'][0] + ": ", time_sheet_dict['matt']['date'])
 
 dates_worked = {'02-15-2022': [{'matt': ['time_in', 'time_out']},
                                {'ken': ['time_in', 'time_out']},
@@ -94,15 +91,25 @@ dates_worked = {'02-15-2022': [{'matt': ['time_in', 'time_out']},
                                {'ken': ['time_in', 'time_out']},
                                {'sherree': ['time_in', 'time_out']}],
 
-                '02-13-2022': [{'matt': ['time_in', 'time_out']},
-                               {'ken': ['time_in', 'time_out']},
-                               {'sherree': ['time_in', 'time_out']}]
+                '02-13-2022': [{'matt': ['0700', '1530']},
+                               {'ken': ['0715', '1545']},
+                               {'sherree': ['0730', '1600']}]
                 }
 
-def print_name_time(name):
-    for i, v in enumerate(dates_worked):
-        if v == name:
-            print("This is from dates_worked: ", dates_worked['02-13-2022'][i])
+def print_name_time(date, name):
+    day = dates_worked[date]
+    index = 0
+    for dict in day:
+        if name in dict.keys():
+            print(day[index])
+        else:
+            index += 1
 
 
-print_name_time('matt')
+
+
+
+print_name_time('02-13-2022', 'matt')
+print_name_time('02-13-2022', 'ken')
+print_name_time('02-13-2022', 'sherree')
+#print(dates_worked['02-13-2022'][0])
