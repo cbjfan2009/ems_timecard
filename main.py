@@ -98,13 +98,9 @@ dates_worked = {'02-15-2022': [{'matt': ['time_in', 'time_out']},
 
 def print_name_time(date, name):
     day = dates_worked[date]
-    index = 0
-    for dict in day:
+    for count, dict in enumerate(day):
         if name in dict.keys():
-            print(day[index])
-        else:
-            index += 1
-
+            print(f'{name} worked on {date} from ', day[count])
 
 
 
@@ -112,4 +108,6 @@ def print_name_time(date, name):
 print_name_time('02-13-2022', 'matt')
 print_name_time('02-13-2022', 'ken')
 print_name_time('02-13-2022', 'sherree')
-#print(dates_worked['02-13-2022'][0])
+
+print("# \n# \n#")
+
